@@ -1,0 +1,86 @@
+*, ::after, ::before
+{
+    margin: 0;
+    padding: 0;
+}
+
+html, body
+{
+    background-color: #232020;
+    scroll-behavior: smooth;
+    height: 3000px;
+}
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(100, 100, 100);
+    color: black;
+    position: fixed;
+}
+button {
+    position: relative;
+    border: none;
+    width: 60px;
+    height: 60px;
+    left: 95%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.containerLignes {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(100, 100, 100);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ligne {
+    width: 60px;
+    height: 10px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+}
+.ligne:nth-child(1) {
+    top: 0px;
+}
+.ligne:nth-child(2) {
+    top: 25px;
+}
+.ligne:nth-child(3) {
+    top: 50px;
+}
+
+/* anim retour */
+.btn .ligne:nth-child(1), .ligne:nth-child(3) {
+    transform: rotate(0deg);
+    transition:
+        transform 0.4s,
+        top 0.4s 0.4s;
+}
+.btn .ligne:nth-child(2) {
+    opacity: 1;
+}
+
+.btn.active .ligne:nth-child(1) {
+    top: 25px;
+    transform: rotate(45deg);
+    transition:
+        top 0.4s,
+        transform 0.4s 0.4s;
+}
+
+.btn.active .ligne:nth-child(2) {
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.btn.active .ligne:nth-child(3) {
+    top: 25px;
+    transform: rotate(-45deg);
+    transition:
+        top 0.4s,
+        transform 0.4s 0.4s;
+
+}
